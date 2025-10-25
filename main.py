@@ -11,9 +11,11 @@ import re
 from datetime import datetime, timedelta
 import discord.ui
 
+from keep import keep_alive
 load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w') 
+keep_alive()
 
 bot = commands.Bot(command_prefix="-", intents=discord.Intents.all()) 
 status=cycle(["🎂 Happy Birthday! 🎂"]) 
